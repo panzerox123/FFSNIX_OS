@@ -3,8 +3,8 @@ EXT_BOOT equ 0x7e00 ; Extended partition macro
 disk_read_func:
     mov ah, 0x02 ; Move head to read mode
     mov bx, EXT_BOOT
-    mov [BOOT_DRIVE], dl ; Get Disk number from BIOS
     mov al, 4 ; Number of sectors to read
+    mov dl, [BOOT_DRIVE] ; Get Disk number from BIOS
     mov ch, 0x00 ; Cylinder
     mov dh, 0x00 ; Head
     mov cl, 0x02 ; 2nd Sector. First one should store boot.bin
