@@ -21,7 +21,16 @@ gdt_end:
 
 gdt_desc: ;gdt descriptor
     dw gdt_end - gdt_null_desc - 1
-    dd gdt_null_desc
+    dq gdt_null_desc
 
 CODE_SEG equ gdt_code_desc - gdt_null_desc
 DATA_SEG equ gdt_data_desc - gdt_null_desc
+
+[bits 32]
+
+EDIT_GDT_LM:
+    mov [gdt_code_desc + 6], byte 10101111b
+    mov [gdt_data_desc + 6], byte 10101111b    
+    ret
+
+[bits 16]

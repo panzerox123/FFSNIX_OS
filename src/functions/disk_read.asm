@@ -1,4 +1,4 @@
-EXT_BOOT equ 0x7e00 ; Extended partition macro
+EXT_BOOT equ 0x9000 ; Extended partition macro
 
 disk_read_func:
     mov ah, 0x02 ; Move head to read mode
@@ -18,7 +18,7 @@ BOOT_DRIVE:
 
 
 disk_read_failure_msg:
-    db "Unable to read disk. UNDEFINED ERROR CODE", 0
+    db "Unable to read disk. ERRCODE 0", 0
 
 disk_read_failure:
     mov bx, disk_read_failure_msg;

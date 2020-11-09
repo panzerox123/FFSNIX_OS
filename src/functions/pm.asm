@@ -14,6 +14,10 @@ Enter_Protected:
 
 [bits 32]
 
+%include "functions/cpu_id.asm"
+%include "functions/paging.asm"
+
+
 Start_Protected:
     mov ax, DATA_SEG
     mov ds, ax
@@ -23,3 +27,10 @@ Start_Protected:
     mov gs, ax
     mov ebp, 0x90000
     mov esp, ebp
+    call DETECT_CPUID
+    call DETECT_LONGMODE
+    call SETUP_IDENTITY_PAGING
+    call EDIT_GDT_LM
+    jmp CODE_SEG:START_LM_64
+
+%include "functions/lm_64bit.asm"
