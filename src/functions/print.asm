@@ -1,3 +1,4 @@
+; Print in Real Mode
 print_func:
     mov ah, 0x0e
     loop:
