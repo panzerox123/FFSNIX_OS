@@ -1,5 +1,6 @@
 [org 0x7c00]
 mov [BOOT_DRIVE], dl
+mov bp, 0x9000
 mov sp,bp
 
 call disk_read_func 

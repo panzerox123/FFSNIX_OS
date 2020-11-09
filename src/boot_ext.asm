@@ -10,7 +10,7 @@ call print_pm_func
 jmp $
 
 pm_string:
-    db "Entering 32 bit protected mode...",0
+    db "Entering 32 bit protected mode...", 0
 
 %include "functions/print_pm.asm"
 
