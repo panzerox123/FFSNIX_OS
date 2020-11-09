@@ -1,11 +1,11 @@
 [org 0x7e00]
 ; Extended Bootloader code.
-mov bx, msg_string
-call print_func
-msg_string:
-    db "Successfully read from disk", 0
+;%include "functions/print.asm"
+;Entering 32 bit protected mode
+%include "functions/pm.asm"
+
+[bits 32]
 
 jmp $
 
-%include "functions/print.asm"
 times 2048 - ($-$$) db 0
