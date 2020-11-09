@@ -14,4 +14,4 @@ enter_32pm_err:
     db "Entering 32 bit protected mode - 64 bit long mode not accessible! ERRCODE 1", 0
 
 %include "functions/print_pm.asm"
-times 8192 - ($-$$) db 0
+times 16384 - ($-$$) db 0

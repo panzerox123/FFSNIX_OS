@@ -1,5 +1,5 @@
 #  Far From *NIX OS (FFSNIX OS)
-An operating system (legacy BIOS) based on the x86_64 architecture. Will hopefully emulate a UNIX OS in the future :)
+An operating system based on the x86_64 architecture. Will hopefully emulate a UNIX OS in the future.
 
 **Built by Kunal Bhat**
 
@@ -18,3 +18,12 @@ qemu-system-x86_64 src/out/bootloader.bin
 ```
 sh ./build_bootloader.sh clean
 ```
+
+### Current Status
+**Bootloader**
+- [x] Detected by BIOS
+- [x] Ability to read from disk
+- [x] Ability to enter 32 bit Protected mode
+- [ ] 64 bit protected mode supported
+- [ ] UEFI Support
+

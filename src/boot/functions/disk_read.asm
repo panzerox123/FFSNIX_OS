@@ -3,7 +3,7 @@ EXT_BOOT equ 0x9000 ; Extended partition macro
 disk_read_func:
     mov ah, 0x02 ; Move head to read mode
     mov bx, EXT_BOOT
-    mov al, 16 ; Number of sectors to read
+    mov al, 32 ; Number of sectors to read
     mov dl, [BOOT_DRIVE] ; Get Disk number from BIOS
     mov ch, 0x00 ; Cylinder
     mov dh, 0x00 ; Head

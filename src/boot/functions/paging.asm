@@ -20,7 +20,7 @@ SETUP_IDENTITY_PAGING:
         loop SetEntry
 
     mov eax, cr4
-    or eax, 1 >> 5
+    or eax, 1 << 5
     mov cr4, eax
 
     mov ecx, 0xC0000080
