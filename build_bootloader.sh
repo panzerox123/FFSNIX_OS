@@ -3,7 +3,7 @@ bool_nasm=0
 function check_nasm
 {
     if [[ -f `which nasm` ]]; then
-        echo "nasm exists... BUILDING!!!"
+        echo "Buidling Bootloader"
         ((bool_nasm=1))
     else 
         echo "Please install nasm to build."
@@ -15,12 +15,12 @@ function run_build
 {
     check_nasm
     if [[ $bool_nasm == 1 ]]; then
-        cd src
-        mkdir out 2> /dev/null
-        nasm -f bin -o out/boot.bin boot.asm
-        nasm -f bin -o out/boot_ext.bin boot_ext.asm
-        cat out/boot.bin out/boot_ext.bin > out/bootloader.bin
-        cd ../
+        cd src/boot
+        mkdir -p ../out/boot 2> /dev/null
+        nasm -f bin -o ../out/boot/boot.bin boot.asm
+        nasm -f bin -o ../out/boot/boot_ext.bin boot_ext.asm
+        cat ../out/boot/boot.bin ../out/boot/boot_ext.bin > ../out/boot/bootloader.bin
+        cd ../..
     else 
         echo "nasm not found... exiting"
     fi
@@ -38,6 +38,6 @@ case "$1" in
     build) run_build ;;
     clean) clean_build ;;
     *) 
-    echo "Usage: ./build_bootloader.sh [build|clean]"
+    echo "Usage: ./build_bootloader.sh [ build | clean ]"
     ;;
 esac
