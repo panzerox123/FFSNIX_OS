@@ -3,7 +3,7 @@ bool_nasm=0
 function check_nasm
 {
     if [[ -f `which nasm` ]]; then
-        echo "Buidling Bootloader"
+        echo "Building Bootloader"
         ((bool_nasm=1))
     else 
         echo "Please install nasm to build."
