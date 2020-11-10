@@ -5,7 +5,8 @@ Written in C++ *for now*. Rust planned for later.
 **Built by Kunal Bhat**
 
 ### Build instructions
-1) Download required dependencies
+1) Download required dependencies.
+
 **Debian/Ubuntu**
 ```
 sudo apt-get update
@@ -17,20 +18,20 @@ sudo pacman -Sy
 sudo pacman -S base-devel gcc nasm
 ```
 
-2) Run script to build toolchain
+2) Run script to build toolchain.
 ```
 sh build_toolchain.sh
 ```
 **This can take anywhere from 10 minutes to a couple hours depending on how fast your system is. You can use the prebuild toolchain that is provided in order to build**
 
-3) Run script to build the kernel
+3) Run script to build the kernel.
 ```
 sh build.sh build
 ```
 
 ### Running the bootloader
 ```
-qemu-system-x86_64 src/out/bootloader.bin
+qemu-system-x86_64 src/out/image.bin
 ```
 
 ### Cleaning build directory
