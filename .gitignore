@@ -1,3 +1,10 @@
 learn/
 **/out
 *.bin
+*.out
+*.o 
+*.tmp
+trash/
+.tar.xz
+bochs_conf
+toolchain/
