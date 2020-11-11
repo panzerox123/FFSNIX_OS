@@ -2,7 +2,7 @@
 An operating system based on the x86_64 architecture. Will hopefully emulate a UNIX OS in the future.
 Written in C++ *for now*. Rust planned for later.
 
-[Imgur](https://i.imgur.com/7fsdiBD.png)
+![Imgur](https://i.imgur.com/7fsdiBD.png)
 
 **Built by Kunal Bhat**
 
