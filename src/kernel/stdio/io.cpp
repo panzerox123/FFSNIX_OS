@@ -1,13 +1,14 @@
 #pragma once
+#include "io_def.h"
 
 // outb sends 8/16/32 bit value to an I/O location
-static inline void outb(unsigned short port, char val){
+static inline void outb(uint_16 port, uint_8 val){
     //volatile stops compiler optimisations
     asm volatile("outb %0, %1" : : "a"(val), "Nd"(port));
 }
 
 // inb recieves 8/16/32 bit value to I/O location
-static inline char inb(unsigned short port){
+static inline char inb(uint_16 port){
     char ret;
     asm volatile("inb %1, %0" : "=a"(ret):"Nd"(port));
     return ret;
