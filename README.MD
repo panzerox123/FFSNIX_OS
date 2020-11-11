@@ -31,7 +31,7 @@ sh build.sh build
 
 ### Running the bootloader
 ```
-qemu-system-x86_64 src/out/image.bin
+qemu-system-x86_64 src/out/os.bin
 ```
 
 ### Cleaning build directory
