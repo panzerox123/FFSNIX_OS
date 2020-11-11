@@ -1,6 +1,7 @@
 learn/
 **/out
 *.bin
+*.flp
 *.out
 *.o 
 *.tmp

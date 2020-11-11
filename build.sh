@@ -27,6 +27,7 @@ function run_build
         ../toolchain/build-tools/bin/x86_64-elf-ld -T"linker.ld"
         # objcopy -O binary out/kernel/kernel.tmp out/kernel/kernel.bin
         cat out/boot/boot.bin out/kernel/kernel.bin > out/os.bin
+        cat out/boot/boot.bin out/kernel/kernel.bin > out/os.flp
         cd ../
     else 
         echo "nasm not found... exiting"

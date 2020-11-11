@@ -22,14 +22,14 @@ sudo pacman -S base-devel gcc nasm
 ```
 sh build_toolchain.sh
 ```
-**This can take anywhere from 10 minutes to a couple hours depending on how fast your system is. You can use the prebuild toolchain that is provided in order to build**
+**This can take anywhere from 10 minutes to a couple hours depending on how fast your system is. You can use an x86_64-elf prebuilt toolchain**
 
 3) Run script to build the kernel.
 ```
 sh build.sh build
 ```
 
-### Running the bootloader
+### Running the OS
 ```
 qemu-system-x86_64 src/out/os.bin
 ```
