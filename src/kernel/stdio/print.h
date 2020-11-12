@@ -1,3 +1,7 @@
+#pragma once
+#include"cursor.cpp"
+#include"cursor.h"
+#include"io.h"
 //BACKGROUND COLORS
 //B{COLOR} = BLINKING
 #define BG_BLACK 0x00
@@ -34,3 +38,11 @@
 #define FG_LMAGENTA 0x0D
 #define FG_YELLOW 0x0E
 #define FG_BWHITE 0x0F
+
+class ScreenOut {
+    public:
+    void print(const char *, uint_8);
+    void clrscr(uint_64);
+};
+
+ScreenOut screenOut;
