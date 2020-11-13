@@ -1,5 +1,6 @@
 [bits 64]
 extern _start
+%include "functions/idt.asm"
 START_LM_64:
     mov edi, 0xb8000
     mov rax, 0x7f207f207f207f20
