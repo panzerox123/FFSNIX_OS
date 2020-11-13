@@ -1,19 +1,19 @@
 #pragma once
 #include "print.h"
 
-
 void ScreenOut::print(const char *str, uint_8 color = BG_BYELLOW | FG_BLACK)
 {
     uint_16 index = cursorController.get_cursor_position();
-    while(*str!='\0'){
+    while (*str != '\0')
+    {
         switch (*str)
         {
         case '\n':
-            index += (VGA_WIDTH-index%VGA_WIDTH);
+            index += (VGA_WIDTH - index % VGA_WIDTH);
             break;
         default:
-            *(VIDEO_MEMORY + 2*index) = *str;
-            *(VIDEO_MEMORY + 2*index + 1) = color;
+            *(VIDEO_MEMORY + 2 * index) = *str;
+            *(VIDEO_MEMORY + 2 * index + 1) = color;
             index++;
             break;
         }
@@ -34,4 +34,18 @@ void ScreenOut::clrscr(uint_64 color = BG_BYELLOW | FG_BLACK)
         *j = clr_bits;
     cursorController.set_cursor_position(0, 0);
     return;
+}
+
+void ScreenOut::printc(char c, uint_8 color = BG_BYELLOW | FG_BLACK)
+{
+    *(VIDEO_MEMORY + 2 * cursorController.get_cursor_position()) = c;
+    *(VIDEO_MEMORY + 2 * cursorController.get_cursor_position() + 1) = color;
+    cursorController.set_cursor_position(cursorController.get_cursor_position() + 1);
+}
+
+const char *ScreenOut::convertASCII(uint_8 input)
+{
+    char *temp;
+    *temp = input;
+    return temp;
 }

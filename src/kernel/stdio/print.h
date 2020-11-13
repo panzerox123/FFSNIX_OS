@@ -40,9 +40,12 @@
 #define FG_BWHITE 0x0F
 
 class ScreenOut {
+
     public:
     void print(const char *, uint_8);
+    void printc(char, uint_8);
     void clrscr(uint_64);
+    const char* convertASCII(uint_8);
 };
 
 ScreenOut screenOut;

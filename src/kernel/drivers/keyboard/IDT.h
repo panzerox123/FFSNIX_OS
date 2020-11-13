@@ -1,5 +1,5 @@
 #pragma once
-#include "stdio/io.h"
+#include "../../stdio/io.h"
 
 struct IDT64
 {

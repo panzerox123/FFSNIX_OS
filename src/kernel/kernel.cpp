@@ -1,5 +1,5 @@
 #include "stdio/print.cpp"
-#include "IDT.cpp"
+#include "drivers/keyboard/IDT.cpp"
 #include "stdio/cursor.cpp"
 extern const char ascii_logo[];
 /*
