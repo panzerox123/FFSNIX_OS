@@ -5,6 +5,7 @@ ENTRY (_start)
 INPUT
 (
     "out/boot/boot_ext.o"
+    "out/boot/bin.o"
     "out/kernel/kernel.o"
 )
 
@@ -20,6 +21,11 @@ SECTIONS
     .text : ALIGN(0x1000)
     {
         *(.text)
+    }
+
+    .idt BLOCK(0x1000) : ALIGN(0x1000)
+    {
+        _idt = .;
     }
 
     .data : ALIGN(0x1000)

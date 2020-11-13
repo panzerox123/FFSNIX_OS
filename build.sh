@@ -19,6 +19,7 @@ function run_build
         mkdir -p ../out/boot 2> /dev/null
         nasm -f bin -o ../out/boot/boot.bin boot.asm
         nasm -f elf64 -o ../out/boot/boot_ext.o boot_ext.asm
+        nasm -f elf64 -o ../out/boot/bin.o bin.asm
         cd ../
         mkdir -p out/kernel 2> /dev/null
         echo "Using gcc toolchain"
