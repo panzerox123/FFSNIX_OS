@@ -21,6 +21,7 @@ public:
     IDT();
     void intitializeIDT64();
     void isr0_handler();
+    void (*KBHandler)(uint_8, uint_8);
 };
 
 IDT idt;

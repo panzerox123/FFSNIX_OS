@@ -9,3 +9,4 @@ trash/
 .tar.xz
 bochs_conf
 toolchain/
+scancode.doc

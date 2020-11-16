@@ -24,8 +24,11 @@ void IDT::intitializeIDT64(){
 
 void IDT::isr0_handler(){
     uint_8 scan_code = inb(0x60);
+    uint_8 _ch = 0;
     if(scan_code < 0x3A)
-        screenOut.printc(SCAN_CODES_1::lookup_table[scan_code]);
+        _ch = SCAN_CODES_1::lookup_table[scan_code];
+        //screenOut.printc(SCAN_CODES_1::lookup_table[scan_code]);
+    if(KBHandler !=0) KBHandler(scan_code,_ch);
     outb(0x20,0x20);
     outb(0xa0,0x20);
 }
