@@ -38,9 +38,19 @@ void ScreenOut::clrscr(uint_64 color = BG_BYELLOW | FG_BLACK)
 
 void ScreenOut::printc(char c, uint_8 color = BG_BYELLOW | FG_BLACK)
 {
-    *(VIDEO_MEMORY + 2 * cursorController.get_cursor_position()) = c;
-    *(VIDEO_MEMORY + 2 * cursorController.get_cursor_position() + 1) = color;
-    cursorController.set_cursor_position(cursorController.get_cursor_position() + 1);
+    switch (c)
+    {
+    case '\n':
+        cursorController.set_cursor_position(cursorController.get_cursor_position() + VGA_WIDTH - cursorController.get_cursor_position() % VGA_WIDTH);
+
+        break;
+
+    default:
+        *(VIDEO_MEMORY + 2 * cursorController.get_cursor_position()) = c;
+        *(VIDEO_MEMORY + 2 * cursorController.get_cursor_position() + 1) = color;
+        cursorController.set_cursor_position(cursorController.get_cursor_position() + 1);
+        break;
+    }
 }
 
 const char *ScreenOut::convertASCII(uint_8 input)
